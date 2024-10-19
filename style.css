@@ -6,7 +6,7 @@
     --secondary-text-clr: #636363;
     --card-background: white;
     --sidebar-width: 250px;
-    --sidebar-background: #333;
+    --sidebar-background: white;
     /* Original position of toggle button is (10px, 10px) */
     --toggle-btn-padding: 10px;
 }
@@ -55,7 +55,7 @@ main p {
     width: var(--sidebar-width);
     height: 100%;
     background-color: var(--sidebar-background);
-    color: white;
+    color: var(--text-clr);
     z-index: 999;
     /* Flexbox to center the content */
     display: flex;
@@ -158,6 +158,7 @@ it slides from -250px to left=0 */
     .icon-bar:is(:first-child, :last-child) {
     position: absolute;
     margin: 0;
+    background-color: var(--base-clr);
 }
 
 #sidebar-toggle-btn[aria-expanded="true"] .icon-bar:first-child {
@@ -170,4 +171,24 @@ it slides from -250px to left=0 */
 
 #sidebar-toggle-btn[aria-expanded="true"] .icon-bar:last-child {
     transform: rotate(-45deg);
+}
+
+/* Overlay */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 500; /* Make sure overlay is above the content but below the sidebar */
+    opacity: 0;
+    pointer-events: none; /* Ensure it's clickable only when visible */
+    transition: opacity 0.3s ease;
+}
+
+#overlay.darkened {
+    opacity: 1;
+    /* Allow interactions with the overlay when visible */
+    pointer-events: auto;
 }
