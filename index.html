@@ -8,6 +8,25 @@
         <script src="/app.js" defer></script>
     </head>
     <body>
+        <!-- Toggle button -->
+        <button
+            id="sidebar-toggle-btn"
+            aria-expanded="false"
+            aria-controls="sidebar"
+            aria-label="Open navigation menu"
+        >
+            &#9776;
+        </button>
+
+        <!-- Sidebar -->
+        <div id="sidebar" aria-hidden="true">
+            <div class="sidebar-content">
+                <p>Menu Item 1</p>
+                <p>Menu Item 2</p>
+                <p>Menu Item 3</p>
+            </div>
+        </div>
+
         <main>
             <div class="container">
                 <h2>Hello, World!</h2>

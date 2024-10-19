@@ -5,6 +5,10 @@
     --text-clr: #333;
     --secondary-text-clr: #636363;
     --card-background: white;
+    --sidebar-width: 250px;
+    --sidebar-background: #333;
+    /* Original position of toggle button is (10px, 10px) */
+    --toggle-btn-padding: 10px;
 }
 
 * {
@@ -42,4 +46,95 @@ main p {
 
 .container p {
     margin-top: 1em;
+}
+
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: calc(-1 * var(--sidebar-width));
+    width: var(--sidebar-width);
+    height: 100%;
+    background-color: var(--sidebar-background);
+    color: white;
+    z-index: 999;
+    /* Flexbox to center the content */
+    display: flex;
+    /* Centers horizontally */
+    justify-content: center;
+    padding-top: 20px;
+}
+
+#sidebar .sidebar-content p {
+    margin: 20px;
+}
+
+/* When the sidebar opens
+it slides from -250px to left=0 */
+#sidebar[aria-hidden="false"] {
+    left: 0;
+}
+
+/* General styles for sidebar toggle button */
+#sidebar-toggle-btn {
+    position: fixed;
+    top: var(--toggle-btn-padding);
+    left: var(--toggle-btn-padding);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    /* Ensure button is always on top */
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.5s ease-in-out;
+    outline: none;
+}
+
+#sidebar-toggle-btn[aria-expanded="true"] {
+    /* Move the toggle button to the right edge of the sidebar */
+    left: calc(var(--sidebar-width) + var(--toggle-btn-padding));
+}
+
+/* Mobile specific styles */
+@media (max-width: 768px) {
+    #sidebar {
+        transition: left 0.5s ease-in-out;
+        /* Sidebar is hidden off-screen on mobile */
+        left: calc(-1 * var(--sidebar-width));
+    }
+
+    #sidebar[aria-hidden="false"] {
+        left: 0;
+    }
+
+    /* Ensure the toggle button is always visible on mobile */
+    #sidebar-toggle-btn {
+        display: flex;
+    }
+
+    main {
+        /* No margin on mobile */
+        margin-left: 0;
+    }
+}
+
+/* Desktop: Sidebar always visible */
+@media (min-width: 769px) {
+    #sidebar {
+        transition: none;
+        /* Sidebar always visible */
+        left: 0;
+    }
+
+    #sidebar-toggle-btn {
+        /* Hide the toggle button on desktop */
+        display: none;
+    }
+
+    main {
+        /* Push the content to the right,
+        sidebar is not supposed to cover it */
+        margin-left: var(--sidebar-width);
+    }
 }
