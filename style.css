@@ -89,6 +89,7 @@ it slides from -250px to left=0 */
     justify-content: center;
     transition: left 0.5s ease-in-out;
     outline: none;
+    flex-direction: column;
 }
 
 #sidebar-toggle-btn[aria-expanded="true"] {
@@ -137,4 +138,36 @@ it slides from -250px to left=0 */
         sidebar is not supposed to cover it */
         margin-left: var(--sidebar-width);
     }
+}
+
+#sidebar-toggle-btn .icon-bar {
+    display: block;
+    width: 1.3rem;
+    height: 2px;
+    /* this defines spacing between bars */
+    margin: 2px;
+    background-color: var(--text-clr);
+    transition: 0.5s ease-in-out;
+}
+
+#sidebar-toggle-btn:is(:focus, :hover) .icon-bar {
+    background-color: #000;
+}
+
+#sidebar-toggle-btn[aria-expanded="true"]
+    .icon-bar:is(:first-child, :last-child) {
+    position: absolute;
+    margin: 0;
+}
+
+#sidebar-toggle-btn[aria-expanded="true"] .icon-bar:first-child {
+    transform: rotate(45deg);
+}
+
+#sidebar-toggle-btn[aria-expanded="true"] .icon-bar:nth-child(2) {
+    opacity: 0;
+}
+
+#sidebar-toggle-btn[aria-expanded="true"] .icon-bar:last-child {
+    transform: rotate(-45deg);
 }
