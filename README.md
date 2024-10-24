@@ -5,7 +5,7 @@ This repository contains the code for my video tutorial on creating a responsive
 <a href="https://laustke.github.io/mango-drawer/index.html" target="_blank">See the Live Demo Here!</a>
 
 This part only covers creating an drawer that slides in and out. 
-You can watch the YouTube video for a step-by-step explanation of how it works.
+You can watch the [YouTube video](https://www.youtube.com/watch?v=qfnnAIUf_yw) for a step-by-step explanation of how it works.
 
 For the full sidebar menu with dropdowns and submenus, please check the second part here: [mango-sidebar](https://github.com/laustke/mango-sidebar).
 
