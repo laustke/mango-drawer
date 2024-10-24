@@ -7,3 +7,5 @@ You can watch the YouTube video for a step-by-step explanation of how it works.
 
 For the full sidebar menu with dropdowns and submenus, please check the second part here: [mango-sidebar](https://github.com/laustke/mango-sidebar).
 
+![mango-drawer](https://laustke.github.io/mango-drawer/MangoDrawer.gif)
+
