@@ -6,7 +6,7 @@ This repository contains the code for my video tutorial on creating a responsive
 
 This part only covers creating an drawer that slides in and out.
 
-You can watch the <a href="https://www.youtube.com/watch?v=qfnnAIUf_yw" target="_blank">YouTube tutorial</a> for a step-by-step explanation of how it works.
+You can watch the [YouTube tutorial](https://www.youtube.com/watch?v=qfnnAIUf_yw) for a step-by-step explanation of how it works.
 
 For the full sidebar menu with dropdowns and submenus, please check the second part here: [mango-sidebar](https://github.com/laustke/mango-sidebar).
 
