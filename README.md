@@ -2,7 +2,7 @@
 
 This repository contains the code for my video tutorial on creating a responsive sidebar menu using CSS and vanilla JavaScript.
 
-<a href="https://laustke.github.io/mango-drawer/index.html" target="_blank">Live Demo</a>
+[Live Demo](https://laustke.github.io/mango-drawer/index.html)
 
 This part only covers creating an drawer that slides in and out.
 
